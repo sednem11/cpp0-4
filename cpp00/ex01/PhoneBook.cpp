@@ -14,6 +14,7 @@ PhoneBook::~PhoneBook(void)
 
 void    PhoneBook::add(void)
 {
+    int z = 0;
     std::string str;
 
     str = "";
@@ -22,41 +23,44 @@ void    PhoneBook::add(void)
     while(!std::cin.eof() && str == "")
     {
         std::cout << "enter first name" << std::endl;
-        if(std::getline(std::cin, str) && str != "")
+        if(std::getline(std::cin, str) && str != "" && this->contacts->check_alpha(str) == 0)
             this->contacts[this->index % 8].set_name(str);
+        else
+            z = 1;
     }
     str = "";
     while(!std::cin.eof() && str == "")
     {
         std::cout << "enter last name" << std::endl;
-        if(std::getline(std::cin, str) && str != "")
+        if(std::getline(std::cin, str) && str != "" && this->contacts->check_alpha(str) == 0)
             this->contacts[this->index % 8].set_lname(str);
     }
     str = "";
     while(!std::cin.eof() && str == "")
     {
         std::cout << "enter nickname" << std::endl;
-        if(std::getline(std::cin, str) && str != "")
+        if(std::getline(std::cin, str) && str != "" && this->contacts->check_alpha(str) == 0)
             this->contacts[this->index % 8].set_nickname(str);
     }
     str = "";
     while(!std::cin.eof() && str == "")
     {
         std::cout << "enter number" << std::endl;
-        if(std::getline(std::cin, str) && str != "")
+        if(std::getline(std::cin, str) && str != "" && this->contacts->check_num(str) == 0)
             this->contacts[this->index % 8].set_number(str);
     }
     str = "";
     while(!std::cin.eof() && str == "")
     {
         std::cout << "enter darkest secret" << std::endl;
-        if(std::getline(std::cin, str) && str != "")
+        if(std::getline(std::cin, str) && str != "" && this->contacts->check_alpha(str) == 0)
         {
             this->contacts[this->index % 8].set_secret(str);
             std::cout << "contact added successfully" << std::endl;
         }
     }
-    this->index++;
+    if (z = 0)
+        this->index++;
 }
 
 std::string	add_spaces(int n)
