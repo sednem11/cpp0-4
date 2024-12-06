@@ -7,7 +7,6 @@
 
 class   string{
     private:
-        std::string str;
     public:
         string(void);
         ~string(void);
