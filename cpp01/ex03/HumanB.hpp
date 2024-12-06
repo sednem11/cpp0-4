@@ -13,7 +13,7 @@ public:
     HumanB(std::string name);
     ~HumanB();
     void    attack(void);
-    void    set_weapon(Weapon &weapon);
+    void    set_weapon(Weapon *weapon);
 };
 
 # endif
