@@ -17,18 +17,21 @@ static	float ft_pow(float base, int exp)
 	return (result);
 }
 
-const int Fixed::frac = 8;
+const int Fixed::_frac = 8;
 
-Fixed::Fixed(const int param): value(value * ft_pow(2, this->frac))
+Fixed::Fixed(void): _value(0)
 {
+	std::cout << "Fixed object created with default constructor" << std::endl; 
 }
 
-Fixed::Fixed(const float param): value(value * ft_pow(2, this->frac))
+Fixed::Fixed(const int value): _value(value * ft_pow(2, this->_frac))
 {
+	std::cout << "Fixed object created with int constructor" << std::endl; 
 }
 
-Fixed::Fixed(void): value(0)
+Fixed::Fixed(const float value): _value(value * ft_pow(2, this->_frac))
 {
+	std::cout << "Fixed object created with float constructor" << std::endl; 
 }
 
 Fixed::~Fixed()
@@ -44,29 +47,29 @@ Fixed::Fixed(Fixed const & copy)
 Fixed	&Fixed::operator=(const Fixed &copy)
 {
 	std::cout << "Assignment operator called" << std::endl;
-	this->value = copy.getRawBits();
+	this->_value = copy.getRawBits();
 	return (*this);
 }
 
 int	Fixed::getRawBits(void) const
 {
 	std::cout << "getRawBits member function called" << std::endl;
-	return (this->value);
+	return (this->_value);
 }
 
 void	Fixed::setRawBits(const int raw)
 {
-	this->value = raw;
+	this->_value = raw;
 }
 
 float	Fixed::toFloat(void) const
 {
-	return (this->value * ft_pow(2, -this->frac));
+	return (this->_value * ft_pow(2, -this->_frac));
 }
 
 int	Fixed::toInt(void) const
 {
-	return (this->value * ft_pow(2, -this->frac));
+	return (this->_value * ft_pow(2, -this->_frac));
 }
 
 std::ostream	&operator<<(std::ostream &str, Fixed const &fixed_nbr)

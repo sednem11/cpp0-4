@@ -14,7 +14,7 @@ HumanB::~HumanB(void)
 void    HumanB::attack(void)
 {
     if (!this->weapon)
-        std::cout << this->name << " attacks with his Head because he forgot the pistol at home" << std::endl;
+        std::cout << this->name << " attacks with is head because he forgot the pistol at home" << std::endl;
     else
 	    std::cout << this->name << " attacks with his " << this->weapon->get_type() << std::endl;
 }

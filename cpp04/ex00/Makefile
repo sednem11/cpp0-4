@@ -1,8 +1,8 @@
-NAME = Weapons
+NAME = Animal
 CFLAGS = -Wall -Werror -Wextra -std=c++98
-CC = g++
+CC = c++
 RM = rm -rf
-SRC = main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
+SRC = main.cpp Animal.cpp cat.cpp dog.cpp Wrong.cpp
 OBJ = $(SRC:.cpp=.o)
 
 $(NAME): $(OBJ)

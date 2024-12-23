@@ -1,8 +1,8 @@
-NAME = Weapons
+NAME = fixed
 CFLAGS = -Wall -Werror -Wextra -std=c++98
 CC = g++
 RM = rm -rf
-SRC = main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
+SRC = main.cpp Fixed.cpp
 OBJ = $(SRC:.cpp=.o)
 
 $(NAME): $(OBJ)

@@ -8,28 +8,6 @@ contact::~contact(void)
 {
 }
 
-int contact::check_alpha(std::string str)
-{
-    for (int i = 0; str[i]; i++)
-    {
-        if (isalpha(str[i]));
-        else
-            return(1);
-    }
-    return(0);
-}
-
-int contact::check_num(std::string str)
-{
-    for (int i = 0; str[i]; i++)
-    {
-        if (str[i] >= 48 && str[i] <= 57);
-        else
-            return(1);
-    }
-    return(0);
-}
-
 std::string contact::get_name(void) const
 {
     return (this->name);

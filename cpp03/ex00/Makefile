@@ -1,8 +1,8 @@
-NAME = Weapons
+NAME = AnnnndOpen
 CFLAGS = -Wall -Werror -Wextra -std=c++98
-CC = g++
+CC = c++
 RM = rm -rf
-SRC = main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
+SRC = main.cpp ClapTrap.cpp
 OBJ = $(SRC:.cpp=.o)
 
 $(NAME): $(OBJ)

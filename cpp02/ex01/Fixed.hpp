@@ -7,11 +7,11 @@
 class Fixed
 {
 private:
-    int value;
-    static const int frac;
+    int _value;
+    static const int _frac;
 public:
-    Fixed(const int param);
-    Fixed(const float param);
+    Fixed(const int value);
+    Fixed(const float value);
     Fixed(void);
     ~Fixed();
     Fixed(Fixed const &copy);
