@@ -2,13 +2,26 @@
 
 ClapTrap::ClapTrap(std::string name): _Hpoints(10), _Epoints(10), _Adamage(0)
 {
-    this->_name = name;
     std::cout << "ClapTrap " << this->_name << " created." << std::endl;
+    this->_name = name;
 }
 
 ClapTrap::~ClapTrap()
 {
     std::cout << "ClapTrap " << this->_name << " Destroyed" << std::endl;
+}
+
+ClapTrap::ClapTrap(ClapTrap const &copy)
+{
+    *this = copy;
+}
+
+ClapTrap &ClapTrap::operator=(ClapTrap const &copy)
+{
+    this->_Adamage = copy._Adamage;
+    this->_Epoints = copy._Epoints;
+    this->_Hpoints = copy._Hpoints;
+    return(*this);
 }
 
 void ClapTrap::attack(const std::string &target)

@@ -1,12 +1,12 @@
 NAME = repeat
-CFLAGS = -Wall -Werror -Wextra -std=c++98
-CC = c++
+CXXFLAGS = -Wall -Werror -Wextra -std=c++98
+CXX = c++
 RM = rm -rf
 SRC = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
 OBJ = $(SRC:.cpp=.o)
 
 $(NAME): $(OBJ)
-	$(CC) $(CFLAGS) -o $(NAME) $(OBJ)
+	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJ)
 
 all: $(NAME)
 
