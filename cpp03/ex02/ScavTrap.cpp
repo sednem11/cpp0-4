@@ -1,5 +1,12 @@
 #include "ScavTrap.hpp"
 
+ScavTrap::ScavTrap(void): ClapTrap("default")
+{
+	this->_Hpoints = 100;
+	this->_Epoints = 50;
+	this->_Adamage = 20;
+}
+
 ScavTrap::ScavTrap(std::string const &name): ClapTrap(name)
 {
 	std::cout << "ScavTrap from ClapTrap " << this->_name << " created." << std::endl;

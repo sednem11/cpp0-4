@@ -1,5 +1,9 @@
 #include "ClapTrap.hpp"
 
+ClapTrap::ClapTrap(void): _name("default"), _Hpoints(10), _Epoints(10), _Adamage(0)
+{
+}
+
 ClapTrap::ClapTrap(std::string name): _Hpoints(10), _Epoints(10), _Adamage(0)
 {
     std::cout << "ClapTrap " << this->_name << " created." << std::endl;

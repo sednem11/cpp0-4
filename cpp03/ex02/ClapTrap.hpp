@@ -11,6 +11,7 @@ class ClapTrap
         int         _Epoints;
         int         _Adamage;
     public:
+        ClapTrap(void);
         ClapTrap(std::string name);
         ~ClapTrap();
         ClapTrap(ClapTrap const &copy);

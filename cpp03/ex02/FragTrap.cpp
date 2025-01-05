@@ -1,5 +1,12 @@
 #include "FragTrap.hpp"
 
+FragTrap::FragTrap(void): ClapTrap("default")
+{
+	this->_Hpoints = 100;
+	this->_Epoints = 50;
+	this->_Adamage = 20;
+}
+
 FragTrap::FragTrap(std::string const &name): ClapTrap(name)
 {
 	std::cout << "FragTrap from ClapTrap " << this->_name << " created." << std::endl;
