@@ -1,24 +1,25 @@
-#include "cat.hpp"
+#include "dog.hpp"
 
-Cat::Cat(void): Animal("Cat")
+Dog::Dog(void): Animal("Dog")
 {
     std::cout << "Animal type " << this->getType() << " Created From: Animal " << std::endl;
     this->_brain = new Brain();
 }
 
-Cat::Cat(std::string const &type): Animal(type)
+Dog::Dog(std::string const &type): Animal(type)
 {
     std::cout << "Animal type " << this->getType() << " Created From: Animal " << std::endl;
     this->_brain = new Brain();
 }
 
-Cat::Cat(Cat const &copy)
+Dog::Dog(Dog const &copy)
 {
+    this->_type = copy._type;
     this->_brain = new Brain(*copy._brain);
-	std::cout << "Cat copied." << std::endl;
+	std::cout << "Dog copied." << std::endl;
 }
 
-Cat const	&Cat::operator=(Cat const &copy)
+Dog const	&Dog::operator=(Dog const &copy)
 {
 	Animal::operator=(copy);
 	*this->_brain = *copy._brain;
@@ -26,25 +27,23 @@ Cat const	&Cat::operator=(Cat const &copy)
 	return (*this);
 }
 
-Cat::~Cat(void)
+Dog::~Dog(void)
 {
     delete this->_brain;
-    std::cout << "Cat type: " << this->getType() << " Destroyed " << std::endl;
+    std::cout << "Dog type: " << this->getType() << " Destroyed " << std::endl;
 }
 
-void Cat::makeSound() const
+void Dog::makeSound() const
 {
-    std::cout << "hey im a cat of type: " << this->_type << " Meow?" << std::endl;
+    std::cout << "oi im a Dog of type: " << this->_type << " WOFF??" << std::endl;
 }
 
-
-Brain &Cat::getBrain() const
+Brain &Dog::getBrain() const
 {
     return(*this->_brain);
 }
 
-void    Cat::setBrain(Brain const &brain)
+void    Dog::setBrain(Brain const &brain)
 {
     *this->_brain = brain;
 }
-

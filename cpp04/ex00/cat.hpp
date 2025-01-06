@@ -10,6 +10,8 @@ class Cat: public Animal
     public:
     Cat(void);
     Cat(std::string const &type);
+    Cat(Cat const &copy);
+    Cat const	&operator=(Cat const &copy);
     ~Cat(void);
     void    makeSound() const;
 };
